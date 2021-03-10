@@ -2,10 +2,11 @@ import React, {Component} from 'react'
 import './App.scss'
 import {connect} from 'react-redux'
 import Counter2 from './Counter2'
+import { add, sub, numberAdd } from './redux/ActionsCreator/actions'
 class App extends Component {
 
   render() {
-    console.info(this.props)
+    //console.info(this.props)
     return (
       <div className={'App'}>
         <h1>Счетчик <strong>{this.props.counter}</strong></h1>
@@ -37,9 +38,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return { 
-    onAdd: () => dispatch({type: 'ADD'}),
-    onSub: () => dispatch({type: 'SUB'}),
-    onNumber: number => dispatch({type: 'NUMBER', payload: number})
+    onAdd: () => dispatch(add()),
+    onSub: () => dispatch(sub()),
+    onNumber: number => dispatch(numberAdd(number))
   }
 }
 
