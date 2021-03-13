@@ -10,7 +10,6 @@ configure({
 
 //describe, it, expect - global functions, which are part of create-react-app
 describe('<App/>', () => {
-
     let wrapper;
     beforeEach(() => { //Буде присвоєно wrapper кожному тесту, перед його виконанням (expect)
         wrapper = shallow(<App />)
